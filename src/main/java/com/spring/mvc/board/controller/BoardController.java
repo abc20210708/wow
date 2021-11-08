@@ -86,7 +86,6 @@ public class BoardController {
         return "/board/modify";
     }
 
-
     //게시글 수정 요청 - POST
     @PostMapping("/modify")
     public String boardModify(Board board) {
