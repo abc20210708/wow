@@ -84,7 +84,7 @@
         //수정 버튼 이벤트
         const $editBtn = document.getElementById('edit');
         $editBtn.onclick = e => {
-            location.href = '/board/modify';
+            location.href = '/board/modify?boardNo=${b.boardNo}';
         };
 
         //삭제 버튼 이벤트

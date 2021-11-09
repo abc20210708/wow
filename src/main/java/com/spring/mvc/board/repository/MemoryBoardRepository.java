@@ -58,8 +58,8 @@ public class MemoryBoardRepository implements BoardRepository{
 
     @Override //게시물 수정
     public boolean update(Board board) {
-
-        log.info(board);
+        Board target = boardMap.get(board.getBoardNo());
+        boardMap.put(target.getBoardNo(), board);
         return true;
     }
 }//end class

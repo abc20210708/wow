@@ -7,12 +7,12 @@
     <%@ include file="../include/static-head.jsp" %>
 
     <style>
-        .content-container {
+        .modify-container {
             width: 60%;
             margin: 150px auto;
             position: relative;
         }
-        .content-container .main-title {
+        .modify-container .main-title {
             font-size: 24px;
             font-weight: 700;
             text-align: center;
@@ -21,7 +21,7 @@
             width: fit-content;
             margin: 20px auto 30px;
         }
-        .content-container .main-content {
+        .modify-container .main-content {
             border: 2px solid #ccc;
             border-radius: 20px;
             padding: 10px 25px;
@@ -29,7 +29,7 @@
             text-align: justify;
             min-height: 400px;
         }
-        .content-container .custom-btn-group {
+        .modify-container .custom-btn-group {
             position: absolute;
             bottom: -10%;
             left: 50%;
@@ -43,34 +43,38 @@
     <div class="wrap">
         <%@ include file="../include/header.jsp" %>
 
-        <div class="content-container">
+        <div class="modify-container">
 
-            <h1 class="main-title">${b.boardNo}번 게시물</h1>
-            <h2>게시글 수정</h2>
+            <form action="/board/modify" method="post" autocomplete="off">
+                <h1 class="main-title">${b.boardNo}번 게시물</h1>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">작성자</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="이름" name="writer"
-                    value="${b.writer}" >
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput2" class="form-label">글제목</label>
-                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="제목" name="title"
-                    value="${b.title}" >
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">작성자</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="이름"
+                        name="writer" value="${b.writer}" >
+                </div> 
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label">글제목</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="제목" name="title"
+                    value="${b.title}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+                    <input type="text" class="form-control"  name="content" value="${b.content}">
+                    
+                </div>
 
-                <p class="main-content">
-                    ${b.content}
-                </p>
+                <div class="btn-group btn-group-lg custom-btn-group" role="group" >
+                    <button type="submit" class="btn btn-warning">완료</button>
+                    <button id="list" type="button" class="btn btn-dark">목록</button>
+                </div>
 
-            </div>
 
-            <div class="btn-group btn-group-lg custom-btn-group" role="group" >
-                <button type="button" class="btn btn-warning">완료</button>
-                <button id="list" type="button" class="btn btn-dark">목록</button>
-            </div>
+
+            </form>
+
+
+          
 
         </div>
 

@@ -79,10 +79,10 @@ public class BoardController {
 
     //게시글 수정 화면 요청
     @GetMapping("/modify")
-    public String boardModify(Board board, Model model) {
+    public String boardModify(Long boardNo, Model model) {
         log.info("게시물 수정 화면 요청!");
-        Board target = boardService.getBoard(board.getBoardNo());
-        model.addAttribute("b",target);
+        Board board = boardService.getBoard(boardNo);
+        model.addAttribute("b",board);
         return "/board/modify";
     }
 
@@ -91,6 +91,7 @@ public class BoardController {
     public String boardModify(Board board) {
         log.info("게시물 수정 요청! POST!!" );
         boardService.editBoard(board);
+        log.info("수정된 내용" + board);
         return "redirect:/board/list";
     }
 
