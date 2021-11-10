@@ -45,8 +45,10 @@
 
         <div class="modify-container">
 
-            <form action="/board/modify" method="post" autocomplete="off">
+            <form action="/board/modify" method="post">
                 <h1 class="main-title">${b.boardNo}번 게시물</h1>
+
+                <input type="hidden" name="boardNo" value="${b.boardNo}">
 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">작성자</label>

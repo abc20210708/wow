@@ -1,6 +1,7 @@
 package com.spring.mvc.board.repository;
 
 import com.spring.mvc.board.domain.Board;
+import com.spring.mvc.board.dto.ModBoard;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
@@ -57,9 +58,12 @@ public class MemoryBoardRepository implements BoardRepository{
     }
 
     @Override //게시물 수정
-    public boolean update(Board board) {
+    public boolean update(ModBoard board) {
         Board target = boardMap.get(board.getBoardNo());
-        boardMap.put(target.getBoardNo(), board);
+        target.setContent(board.getContent());
+        target.setTitle(board.getTitle());
+        target.setWriter(board.getWriter());
+
         return true;
     }
 }//end class

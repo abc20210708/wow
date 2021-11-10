@@ -1,6 +1,7 @@
 package com.spring.mvc.board.controller;
 
 import com.spring.mvc.board.domain.Board;
+import com.spring.mvc.board.dto.ModBoard;
 import com.spring.mvc.board.service.BoardService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -88,7 +89,7 @@ public class BoardController {
 
     //게시글 수정 요청 - POST
     @PostMapping("/modify")
-    public String boardModify(Board board) {
+    public String boardModify(ModBoard board) {
         log.info("게시물 수정 요청! POST!!" );
         boardService.editBoard(board);
         log.info("수정된 내용" + board);

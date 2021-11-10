@@ -80,15 +80,17 @@
 
 
     <script>
+
+        const [$editBtn, $delBtn, $listBtn] 
+                 = [...document.querySelector('div[role=group]').children];
         
         //수정 버튼 이벤트
-        const $editBtn = document.getElementById('edit');
         $editBtn.onclick = e => {
             location.href = '/board/modify?boardNo=${b.boardNo}';
         };
 
         //삭제 버튼 이벤트
-        const $delBtn = document.getElementById('del');
+        
         $delBtn.addEventListener('click', e => {
 
             e.preventDefault();
@@ -106,7 +108,6 @@
 
 
         //목록 버튼 이벤트
-        const $listBtn = document.getElementById('list');
         $listBtn.onclick = e => {
             location.href = '/board/list';
         };
