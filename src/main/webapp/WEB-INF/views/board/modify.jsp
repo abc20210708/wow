@@ -51,24 +51,35 @@
                 <input type="hidden" name="boardNo" value="${b.boardNo}">
 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">작성자</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="이름"
-                        name="writer" value="${b.writer}" >
+                    <label for="exampleFormControlInput1" 
+                    class="form-label">작성자</label>
+
+                    <input type="text" class="form-control" 
+                    id="exampleFormControlInput1" 
+                    placeholder="이름"
+                    name="writer" value="${b.writer}" >
+
                 </div> 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">글제목</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="제목" name="title"
-                    value="${b.title}">
+                    <label for="exampleFormControlInput2"
+                    class="form-label">글제목</label>
+                    <input type="text" class="form-control" 
+                    id="exampleFormControlInput2" placeholder="제목"
+                    name="title"  value="${b.title}">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                    <input type="text" class="form-control"  name="content" value="${b.content}">
+                    <label for="exampleFormControlTextarea1"
+                     class="form-label">내용</label>
+                    <input type="text" class="form-control"
+                    name="content" value="${b.content}">
                     
                 </div>
 
-                <div class="btn-group btn-group-lg custom-btn-group" role="group" >
+                <div class="btn-group btn-group-lg custom-btn-group"
+                    role="group" >
                     <button type="submit" class="btn btn-warning">완료</button>
-                    <button id="list" type="button" class="btn btn-dark">목록</button>
+                    <button id="list" type="button" 
+                    class="btn btn-dark">목록</button>
                 </div>
 
 

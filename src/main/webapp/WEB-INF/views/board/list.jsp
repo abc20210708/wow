@@ -76,7 +76,8 @@
 
         console.log('tr 클릭됨 -', e.target);
 
-        let bn = e.target.parentElement.firstElementChild.textContent;
+        let bn = e.target.parentElement.
+        firstElementChild.textContent;
         console.log('글번호: ' + bn );
 
         location.href = '/board/content?boardNo=' + bn;

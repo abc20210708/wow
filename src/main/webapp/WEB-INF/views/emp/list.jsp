@@ -5,7 +5,8 @@
 
 <head>
 
-    <@% include file="../include/static-head.jsp" %>
+  
+    <%@ include file="../include/static-head.jsp" %>
 
 <style>
 
@@ -47,7 +48,7 @@
                     <th>작성시간</th>
                 </tr>
 
-                <c:forEach>
+                <c:forEach var="emp" items="${articles}">
                     <tr>
                         <td>${emp.empNo}</td>
                         <td>${emp.writer}</td>
@@ -76,6 +77,20 @@
     </div>
 
     <script>
+
+        //상세보기 요청 이벤트
+        const $table = document.querySelector(".articles");
+        $table.addEventListener('click', e => {
+            if(!e.target.matches('.articles td')) return;
+
+            console.log('tr 클릭됨!! - ', e.target);
+
+            let en = e.target.parentElement.
+            firstElementChild.textContent;
+            console.log('글번호: ' + en);
+
+            location.href = '/emp/content?empNo=' + en;
+        });
 
     </script>
 

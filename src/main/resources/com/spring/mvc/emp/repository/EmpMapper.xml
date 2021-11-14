@@ -16,7 +16,33 @@
         SELECT * FROM emp
         ORDER BY emp_no DESC
     </select>
-    
+
+    <!--게시물 상세 조회-->
+    <select id="getContent" resultMap="empMap">
+        SELECT * FROM emp
+        WHERE emp_no = #{empNo}
+    </select>
+
+    <!--게시물 등록-->
+    <insert id="insert">
+        INSERT INTO emp
+            (emp_no, writer, title, content)
+        VALUES
+            (seq_emp.nextval, #{writer}, #{title}, #{content})
+    </insert>
+
+    <!--게시물 삭제-->
+    <delete id="delete">
+        DELETE FROM emp
+        WHERE emp_no = #{empNo}
+    </delete>
+
+    <!--게시물 수정-->
+    <update id="update">
+        UPDATE emp SET
+            writer=#{writer}, title=#{title}, content=#{content}
+        WHERE emp_no=#{empNo}
+    </update>
     
     
     

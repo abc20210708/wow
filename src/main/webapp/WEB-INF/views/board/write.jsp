@@ -22,22 +22,31 @@
             <form action="/board/write" method="post" autocomplete="off">
 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">작성자</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="이름"
-                        name="writer" >
+                    <label for="exampleFormControlInput1"
+                     class="form-label">작성자</label>
+                    <input type="text" class="form-control"
+                     id="exampleFormControlInput1" placeholder="이름"
+                    name="writer" >
                 </div> 
                 <div class="mb-3">
-                    <label for="exampleFormControlInput2" class="form-label">글제목</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="제목" name="title">
+                    <label for="exampleFormControlInput2"
+                     class="form-label">글제목</label>
+                    <input type="text" class="form-control"
+                     id="exampleFormControlInput2" 
+                     placeholder="제목" name="title">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">내용</label>
-                    <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+                    <label for="exampleFormControlTextarea1"
+                     class="form-label">내용</label>
+                    <textarea name="content" class="form-control"
+                     id="exampleFormControlTextarea1" rows="10"></textarea>
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-dark" type="submit">글 작성하기</button>
-                    <button id="to-list" class="btn btn-warning" type="button">목록으로</button>
+                    <button class="btn btn-dark" 
+                    type="submit">글 작성하기</button>
+                    <button id="to-list" class="btn btn-warning"
+                     type="button">목록으로</button>
                 </div>
 
             </form>
@@ -53,7 +62,8 @@
 
     <script>
         //목록버튼 이벤트
-        const $toList = document.getElementById('to-list');
+        const $toList = document.getElementById
+        ('to-list');
         $toList.onclick = e => {
             location.href = '/board/list';
         };
