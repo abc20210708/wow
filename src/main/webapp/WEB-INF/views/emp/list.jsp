@@ -10,9 +10,14 @@
 
 <style>
 
+    .wrap {
+        /* background: #333; */
+    }
+
     .emp-list {
         width: 70%;
         margin: 0 auto;
+        
     }
 
     .emp-list .articles {
@@ -28,6 +33,30 @@
         top: -70px;
     }
 
+    .test-list {
+        position: relative;
+        top: 200px;
+    }
+
+    .testA {
+        display: flex;
+        width: 150px;
+        height: 150px;
+    }
+
+    .testB {
+        display: flex;
+        width: 150px;
+        height: 150px;
+    }
+    .testC {
+        display: flex;
+        width: 150px;
+        height: 150px;
+    }
+    
+
+
 </style>
 
 </head>
@@ -37,6 +66,14 @@
     <div class="wrap">
 
         <%@ include file="../include/header.jsp" %>
+
+        <div class="test-list">
+
+            <div class="testA"><img src="../emp/img/after.png" alt=""></div>
+            <div class="testB"><img src="../emp/img/g.png" alt=""></div>
+            <div class="testC"><img src="../emp/img/pixlr-bg-result (1).png" alt=""></div>
+
+        </div>
 
         <div class="emp-list">
             <table class="table table-success table-striped articles">
