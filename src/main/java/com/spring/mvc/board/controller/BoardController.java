@@ -3,6 +3,8 @@ package com.spring.mvc.board.controller;
 import com.spring.mvc.board.domain.Board;
 import com.spring.mvc.board.dto.ModBoard;
 import com.spring.mvc.board.service.BoardService;
+import com.spring.mvc.common.paging.Page;
+import com.spring.mvc.common.paging.PageMaker;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,10 +41,11 @@ public class BoardController {
     //게시물 목록요청
     ///서버가 클라이언트에게 전달할 때 쓰는 객체 Model
     @GetMapping("/list")
-    public String boardList(Model model) {
-        List<Board> boardList = boardService.getList();
-        model.addAttribute("articles",boardList);
-        log.info("게시물 목록 요청/list" + boardList);
+    public String list(Model model, Page page) {
+        log.info("/board/list GET!! - " + page);
+        List<Board> boardList = boardService.getList(page);
+        model.addAttribute("articles", boardList);
+        model.addAttribute("pageInfo", new PageMaker(page, boardService.getCount()));
         return "board/list";
     }
 
