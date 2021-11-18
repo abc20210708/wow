@@ -10,7 +10,7 @@
 
         <div class="btn-group btn-group-lg custom-btn-group" role="group" >
 
-
+<!-- <button id="list" type="button" class="btn btn-dark">목록</button> -->
             <c:forEach var="as" items="${cs}">
                
                   <p>${as.csId}</p>
@@ -20,6 +20,7 @@
                   <p>${as.postalCode}</p>
                   <p>${as.phone}</p>
                   <p>${as.grade}</p>
+                  <p>${as.gender}</p>
                   
                
             </c:forEach>

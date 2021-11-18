@@ -17,6 +17,7 @@ public class CsUserService {
 
     //회원조회
     public List<CsUser> getList() {
+        log.info("목록 서비스 요청");
         return csUserMapper.getArticles();
 
     }

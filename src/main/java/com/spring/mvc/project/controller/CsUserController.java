@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/project")
 public class CsUserController {
 
-    private CsUserService csUserService;
+    private final CsUserService csUserService;
 
     @Autowired
     public CsUserController(CsUserService csUserService) {
