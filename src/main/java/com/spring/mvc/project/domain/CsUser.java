@@ -27,9 +27,13 @@ public class CsUser {
                   String csName,
                   String address,
                   int postalCode,
+<<<<<<< HEAD
                   String phone,
                   int grade,
                   String gender) {
+=======
+                  String phone, int grade, String gender) {
+>>>>>>> origin/master
         this.csId = csId;
         this.pw = pw;
         this.csName = csName;
