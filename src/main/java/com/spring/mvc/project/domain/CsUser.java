@@ -12,7 +12,6 @@ import java.sql.SQLException;
 
 public class CsUser {
 
-
     private String csId; //회원 아이디
     private String pw;  //회원 비밀번호
     private String csName; //회원 이름
