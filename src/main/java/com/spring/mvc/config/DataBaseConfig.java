@@ -20,7 +20,7 @@ public class DataBaseConfig {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
         config.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-        config.setUsername("spring4");
+        config.setUsername("project_db");
         config.setPassword("1234");
 
         return new HikariDataSource(config);

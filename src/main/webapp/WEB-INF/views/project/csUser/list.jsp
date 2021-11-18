@@ -4,39 +4,47 @@
 
 <!DOCTYPE html>
 <html lang="ko">
- 
+
 
 
 <head>
     <div class="wrap">
 
-        <div class="btn-group btn-group-lg custom-btn-group" role="group" >
+        <div class="btn-group btn-group-lg custom-btn-group" role="group">
 
-            <button id="list" type="button" class="btn btn-dark">목록</button>
-            <button id="join" type="button" class="btn btn-warning" >회원가입</button>
-          
-
+            <button id="list" type="button" class="btn btn-dark">회원목록</button>
+            <button id="join" type="button" class="btn btn-warning">회원가입</button>
+         
+            <button id="elec" type="button" class="btn btn-warning">상품</button>
+            
 
         </div>
     </div>
 
-            <script>
-                  //목록 버튼 이벤트
-                const $listBtn = document.getElementById('list');
+    <script>
+        // 회원 목록 버튼 이벤트
+        const $listBtn = document.getElementById('list');
 
-                $listBtn.onclick = e => {
-                    var list = '<c:out value="${cs}"/>';
-                    console.log(list);
-                };
+        $listBtn.onclick = e => {
+            var list = '<c:out value="${cs}"/>';
+            console.log(list);
+        };
 
-                // 회원 가입 버튼 이벤트
-                const $joinBtn = document.getElementById('join');
+        // 회원 가입 버튼 이벤트
+        const $joinBtn = document.getElementById('join');
 
-                $joinBtn.onclick = e => {
-                   location.href = '/project/write';
-                };
+        $joinBtn.onclick = e => {
+            location.href = '/project/write';
+        };
 
+        // 상품 버튼 이벤트
+        const $elecBtn = document.getElementById('elec');
 
-               
-            </script>
+        $elecBtn.onclick = e => {
+            //location.href = '/project/product/list';
+            var elecList = '<c:out value="${elec}"/>';
+            console.log(elecList);
+        };
 
+      
+    </script>
