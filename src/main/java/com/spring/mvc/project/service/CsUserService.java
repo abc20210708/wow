@@ -15,9 +15,17 @@ public class CsUserService {
 
     private final CsUserMapper csUserMapper;
 
-    //회원조회
+    //회원 조회 중간 처리
     public List<CsUser> getList() {
+        log.info("목록 서비스 요청");
         return csUserMapper.getArticles();
-
     }
-}
+    
+    //회원가입 중간처리
+    public boolean write(CsUser csUser) {
+        return csUserMapper.insert(csUser);
+    }
+
+
+}//end class
+

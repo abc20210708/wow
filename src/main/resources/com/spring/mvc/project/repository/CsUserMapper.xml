@@ -28,11 +28,20 @@
         <result property="postalCode" column="postal_code" />
     </resultMap>
 
+    <!--  //게시물 목록 조회  -->
     <select id="getArticles" resultMap="userMap">
         SELECT
         *
         FROM cs_user
     </select>
+
+    <!-- // 회원 등록   -->
+    <insert id="insert">
+        INSERT INTO cs_user
+            (cs_id, pw, cs_name, address, postal_code, phone, gender)
+        VALUES
+            (#{csId}, #{pw}, #{csName}, #{address}, #{postalCode}, #{phone}, #{gender})
+    </insert>
 
 
 

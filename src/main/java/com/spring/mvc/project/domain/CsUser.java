@@ -1,8 +1,6 @@
 package com.spring.mvc.project.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +8,8 @@ import java.sql.SQLException;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+
 public class CsUser {
 
 
@@ -20,13 +20,16 @@ public class CsUser {
     private int postalCode; //우편번호
     private String phone;   //연락처
     private int grade;      //등급
+    private String gender; //성별
 
     public CsUser(String csId,
                   String pw,
                   String csName,
                   String address,
                   int postalCode,
-                  String phone, int grade) {
+                  String phone,
+                  int grade,
+                  String gender) {
         this.csId = csId;
         this.pw = pw;
         this.csName = csName;
@@ -34,6 +37,7 @@ public class CsUser {
         this.postalCode = postalCode;
         this.phone = phone;
         this.grade = grade;
+        this.gender = gender;
     }
 
     public CsUser(ResultSet rs) throws SQLException {
@@ -44,6 +48,8 @@ public class CsUser {
         this.postalCode = rs.getInt("postal_code");
         this.phone = rs.getString("phone");
         this.grade = rs.getInt("grade");
+        this.gender = rs.getString("gender");
+
     }
 
-}
+}//end class
