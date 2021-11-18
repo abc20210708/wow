@@ -29,7 +29,8 @@ public class CsUser {
                   int postalCode,
                   String phone,
                   int grade,
-                  String gender) {
+                  String gender)
+        {
         this.csId = csId;
         this.pw = pw;
         this.csName = csName;
